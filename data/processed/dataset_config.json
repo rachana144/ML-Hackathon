@@ -1,0 +1,28 @@
+{
+  "R_m": 50,
+  "K": 30,
+  "n_folds": 5,
+  "seed": 42,
+  "features": [
+    "dist_m",
+    "dist_rank",
+    "dist_gap_min",
+    "n_cands",
+    "heading_diff",
+    "heading_reliable",
+    "speed_ms",
+    "turn_rate",
+    "arc_len_m",
+    "along_t",
+    "dt_prev",
+    "dist_prev_pt",
+    "dist_next_pt",
+    "dist_win5",
+    "heading_diff_win5",
+    "node_deg_sum",
+    "is_two_way"
+  ],
+  "label_method": "dp_monotone_alignment",
+  "pos_rate": 0.10356595389507557,
+  "build_seconds": 43.9948046207428
+}
