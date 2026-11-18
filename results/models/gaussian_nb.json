@@ -1,0 +1,120 @@
+{
+  "model": "gaussian_nb",
+  "family": "Linear / probabilistic (generative)",
+  "config": "{\"transform\": \"QuantileTransformer(normal)\", \"var_smoothing\": 1e-09}",
+  "features": 17,
+  "train_frac": 1.0,
+  "author": "person1",
+  "cv_macro_f1_mean": 0.8054728345330726,
+  "cv_macro_f1_std": 0.01038360365155149,
+  "cv_top1_mean": 0.7476803414584074,
+  "cv_top1_std": 0.12005035568973058,
+  "cv_top1_covered_mean": 0.8295457494144458,
+  "cv_log_loss_mean": 0.7247371454104913,
+  "train_time_s": 4.13823559299999,
+  "train_macro_f1": 0.8054357533755445,
+  "test_top1": 0.8387787056367432,
+  "test_top1_covered": 0.8399623686823813,
+  "test_top1_trip_mean": 0.8430835936131716,
+  "test_macro_f1": 0.8066373198698035,
+  "test_precision": 0.5248144994526214,
+  "test_recall": 0.9020017770344431,
+  "test_accuracy": 0.9125177453861996,
+  "test_log_loss": 0.6234192580056201,
+  "test_route_continuity": 0.8960835509138381,
+  "inference_time_s": 0.35547875500003556,
+  "inference_ms_per_1k_points": 18.553170929020645,
+  "timestamp": "2026-11-18 05:10:33",
+  "fold_scores": [
+    {
+      "fold": 0,
+      "macro_f1": 0.8116599422502302,
+      "log_loss": 0.7176935606957686,
+      "precision": 0.553016393442623,
+      "recall": 0.8729879405827856,
+      "top1": 0.78568170299037,
+      "top1_covered": 0.8023135448475752
+    },
+    {
+      "fold": 1,
+      "macro_f1": 0.7927111844595403,
+      "log_loss": 1.0026251176185141,
+      "precision": 0.5056769725553055,
+      "recall": 0.9392163972594897,
+      "top1": 0.8944126537518298,
+      "top1_covered": 0.8978606461955381
+    },
+    {
+      "fold": 2,
+      "macro_f1": 0.8164968790301064,
+      "log_loss": 0.5646845310787073,
+      "precision": 0.5646586970912347,
+      "recall": 0.8437927322452067,
+      "top1": 0.5291852646501025,
+      "top1_covered": 0.8037007942742428
+    },
+    {
+      "fold": 3,
+      "macro_f1": 0.7930862057391845,
+      "log_loss": 0.7153314420450114,
+      "precision": 0.5012988534932323,
+      "recall": 0.8885888381110649,
+      "top1": 0.7448639644641866,
+      "top1_covered": 0.8359991690901537
+    },
+    {
+      "fold": 4,
+      "macro_f1": 0.8134099611863024,
+      "log_loss": 0.6233510756144549,
+      "precision": 0.5438434890566491,
+      "recall": 0.8814995131450828,
+      "top1": 0.7842581214355484,
+      "top1_covered": 0.8078545926647193
+    }
+  ],
+  "test_confusion_matrix": [
+    [
+      165293,
+      15626
+    ],
+    [
+      1875,
+      17258
+    ]
+  ],
+  "features_used": [
+    "dist_m",
+    "dist_rank",
+    "dist_gap_min",
+    "n_cands",
+    "heading_diff",
+    "heading_reliable",
+    "speed_ms",
+    "turn_rate",
+    "arc_len_m",
+    "along_t",
+    "dt_prev",
+    "dist_prev_pt",
+    "dist_next_pt",
+    "dist_win5",
+    "heading_diff_win5",
+    "node_deg_sum",
+    "is_two_way"
+  ],
+  "params": {
+    "memory": "None",
+    "steps": "[('quantiletransformer', QuantileTransformer(output_distribution='normal', random_state=42,\n                    subsample=200000)), ('gaussiannb', GaussianNB())]",
+    "transform_input": "None",
+    "verbose": "False",
+    "quantiletransformer": "QuantileTransformer(output_distribution='normal', random_state=42,\n                    subsample=200000)",
+    "gaussiannb": "GaussianNB()",
+    "quantiletransformer__copy": "True",
+    "quantiletransformer__ignore_implicit_zeros": "False",
+    "quantiletransformer__n_quantiles": "1000",
+    "quantiletransformer__output_distribution": "normal",
+    "quantiletransformer__random_state": "42",
+    "quantiletransformer__subsample": "200000",
+    "gaussiannb__priors": "None",
+    "gaussiannb__var_smoothing": "1e-09"
+  }
+}

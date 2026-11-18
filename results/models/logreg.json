@@ -1,0 +1,129 @@
+{
+  "model": "logreg",
+  "family": "Linear / probabilistic",
+  "config": "{\"scaler\": \"StandardScaler\", \"C\": 1.0, \"penalty\": \"l2\", \"solver\": \"lbfgs\", \"max_iter\": 1000, \"class_weight\": null}",
+  "features": 17,
+  "train_frac": 1.0,
+  "author": "person1",
+  "cv_macro_f1_mean": 0.9013424577085672,
+  "cv_macro_f1_std": 0.013911132777089745,
+  "cv_top1_mean": 0.7814104785342785,
+  "cv_top1_std": 0.1193773989751226,
+  "cv_top1_covered_mean": 0.8676586793965777,
+  "cv_log_loss_mean": 0.11012073177360673,
+  "train_time_s": 4.274081873,
+  "train_macro_f1": 0.9052538956846836,
+  "test_top1": 0.8694676409185804,
+  "test_top1_covered": 0.8706946114043799,
+  "test_top1_trip_mean": 0.883997354787504,
+  "test_macro_f1": 0.9118164516180937,
+  "test_precision": 0.8448294074152318,
+  "test_recall": 0.8360424397637589,
+  "test_accuracy": 0.9696328954471838,
+  "test_log_loss": 0.0868719229184032,
+  "test_route_continuity": 0.9311227154046997,
+  "inference_time_s": 0.017081022000070334,
+  "inference_ms_per_1k_points": 0.8914938413397878,
+  "timestamp": "2026-11-18 05:09:57",
+  "fold_scores": [
+    {
+      "fold": 0,
+      "macro_f1": 0.899431236337298,
+      "log_loss": 0.11724991474511381,
+      "precision": 0.8414183162932347,
+      "recall": 0.8007867087624864,
+      "top1": 0.8357070451089711,
+      "top1_covered": 0.8533978572537654
+    },
+    {
+      "fold": 1,
+      "macro_f1": 0.927370040222715,
+      "log_loss": 0.10134721347341255,
+      "precision": 0.8880316518298714,
+      "recall": 0.8566957384682914,
+      "top1": 0.9131385334879565,
+      "top1_covered": 0.9166587148609706
+    },
+    {
+      "fold": 2,
+      "macro_f1": 0.8879532911776982,
+      "log_loss": 0.11100316767225503,
+      "precision": 0.8283990194229681,
+      "recall": 0.7668674172994676,
+      "top1": 0.5587440853623494,
+      "top1_covered": 0.8485932908556632
+    },
+    {
+      "fold": 3,
+      "macro_f1": 0.900964044678747,
+      "log_loss": 0.1220933322045321,
+      "precision": 0.8092244596093724,
+      "recall": 0.8334025758205235,
+      "top1": 0.780985872046394,
+      "top1_covered": 0.8765406453399807
+    },
+    {
+      "fold": 4,
+      "macro_f1": 0.8909936761263781,
+      "log_loss": 0.09891003077272009,
+      "precision": 0.8332633053221289,
+      "recall": 0.7724115546900358,
+      "top1": 0.8184768566657215,
+      "top1_covered": 0.8431028886725089
+    }
+  ],
+  "test_confusion_matrix": [
+    [
+      177981,
+      2938
+    ],
+    [
+      3137,
+      15996
+    ]
+  ],
+  "features_used": [
+    "dist_m",
+    "dist_rank",
+    "dist_gap_min",
+    "n_cands",
+    "heading_diff",
+    "heading_reliable",
+    "speed_ms",
+    "turn_rate",
+    "arc_len_m",
+    "along_t",
+    "dt_prev",
+    "dist_prev_pt",
+    "dist_next_pt",
+    "dist_win5",
+    "heading_diff_win5",
+    "node_deg_sum",
+    "is_two_way"
+  ],
+  "params": {
+    "memory": "None",
+    "steps": "[('standardscaler', StandardScaler()), ('logisticregression', LogisticRegression(max_iter=1000, random_state=42))]",
+    "transform_input": "None",
+    "verbose": "False",
+    "standardscaler": "StandardScaler()",
+    "logisticregression": "LogisticRegression(max_iter=1000, random_state=42)",
+    "standardscaler__copy": "True",
+    "standardscaler__with_mean": "True",
+    "standardscaler__with_std": "True",
+    "logisticregression__C": "1.0",
+    "logisticregression__class_weight": "None",
+    "logisticregression__dual": "False",
+    "logisticregression__fit_intercept": "True",
+    "logisticregression__intercept_scaling": "1",
+    "logisticregression__l1_ratio": "0.0",
+    "logisticregression__max_iter": "1000",
+    "logisticregression__n_jobs": "None",
+    "logisticregression__penalty": "deprecated",
+    "logisticregression__random_state": "42",
+    "logisticregression__solver": "lbfgs",
+    "logisticregression__tol": "0.0001",
+    "logisticregression__verbose": "0",
+    "logisticregression__warm_start": "False"
+  }
+}
