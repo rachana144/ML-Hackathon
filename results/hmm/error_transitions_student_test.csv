@@ -1,0 +1,6 @@
+cat_clf,adjacent,correct,not_a_candidate,other,reverse_twin
+adjacent,205,469,0,13,78
+correct,251,16319,0,50,302
+not_a_candidate,0,0,27,0,0
+other,34,345,0,31,6
+reverse_twin,41,567,0,12,410

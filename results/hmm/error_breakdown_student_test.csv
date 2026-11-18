@@ -1,0 +1,6 @@
+,classifier,hmm,classifier_%,hmm_%
+correct,16922,17700,88.32,92.38
+reverse_twin,1030,796,5.38,4.15
+adjacent,765,531,3.99,2.77
+other,416,106,2.17,0.55
+not_a_candidate,27,27,0.14,0.14

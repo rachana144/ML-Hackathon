@@ -32,7 +32,8 @@ def ll(lonlat):
 
 
 def trip_map(partition, trip_id, buf=150, pred_arcs=None, pred_label="predicted (classifier Top-1)",
-             point_step=1, fname=None):
+             point_step=1, fname=None, pred_layers=None):
+    """pred_layers: optional list of (arc_ids, label, colour, dash_array|None, weight) drawn as extra layers."""
     tr = load_trip(partition, trip_id)
     lon, lat = tr.track[:, 0], tr.track[:, 1]
     m = folium.Map(location=[float(lat.mean()), float(lon.mean())], zoom_start=14, tiles="OpenStreetMap",
@@ -81,6 +82,13 @@ def trip_map(partition, trip_id, buf=150, pred_arcs=None, pred_label="predicted 
                             tooltip=f"pred arc {i}").add_to(pr)
         pr.add_to(m)
         extra = f'<span style="color:#d62728">&#9644;</span> {pred_label}<br>'
+    for arcs_, lab_, col_, dash_, w_ in (pred_layers or []):
+        fg = folium.FeatureGroup(name=lab_)
+        for i in np.unique(np.asarray(arcs_)[np.asarray(arcs_) >= 0]):
+            folium.PolyLine(ll(tr.nodes[a[i]]), color=col_, weight=w_, opacity=.9, dash_array=dash_,
+                            tooltip=f"{lab_}: arc {i}").add_to(fg)
+        fg.add_to(m)
+        extra += f'<span style="color:{col_}">&#9644;</span> {lab_}<br>'
     folium.Marker([float(lat[0]), float(lon[0])], tooltip="start", icon=folium.Icon(color="green", icon="play")).add_to(m)
     folium.Marker([float(lat[-1]), float(lon[-1])], tooltip="end", icon=folium.Icon(color="red", icon="stop")).add_to(m)
     folium.LayerControl(collapsed=False).add_to(m)
