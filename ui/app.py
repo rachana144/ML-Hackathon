@@ -55,7 +55,7 @@ if res:
         st.json(m)
 
     gps = res["gps_points"]
-    fmap = folium.Map(tiles="cartodbpositron")
+    fmap = folium.Map(tiles="OpenStreetMap")
     roads = folium.FeatureGroup("Road network (nearby)")
     for seg in res["road_network_segments"]:
         folium.PolyLine(seg, color="#999999", weight=2, opacity=0.5).add_to(roads)
