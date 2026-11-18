@@ -1,0 +1,28 @@
+{
+  "model": "lightgbm",
+  "best_value_cv_macro_f1": 0.926667025967364,
+  "best_params": {
+    "n_estimators": 450,
+    "learning_rate": 0.03936658405784372,
+    "num_leaves": 76,
+    "min_child_samples": 59,
+    "subsample": 0.9967112851135496,
+    "colsample_bytree": 0.6939162009781943,
+    "reg_lambda": 0.030329514047975528,
+    "reg_alpha": 3.7945157732639583
+  },
+  "best_trial": 15,
+  "best_user_attrs": {
+    "cv_f1_std": 0.015435624000294787,
+    "cv_log_loss": 0.07214011322567415,
+    "cv_top1": 0.7920735564741971,
+    "seconds": 191.97209606900014
+  },
+  "n_trials": 21,
+  "n_complete": 13,
+  "n_pruned": 8,
+  "search_seconds": 2800.063017129898,
+  "sampler": "TPE(multivariate, seed=42)",
+  "pruner": "MedianPruner",
+  "objective": "mean macro F1, 5-fold GroupKFold on 80 training trips"
+}
